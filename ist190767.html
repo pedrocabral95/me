@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title>Pedro Cabral</title>
-<link rel="shortcut icon" type="img/png" href="P.png"  sizes="128x128">
+
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@ body  {
   margin: 0;
   padding: 20px;
   background: #222;
-  cursor: url(templates/P.png) 2 2, wait;
+  cursor: url(templates/P.png) 2 2;
 }
 /* Style the header */
 .header {
@@ -43,7 +43,7 @@ body  {
 }
 .active {
   background-color: #4CAF50;
-  cursor: wait;
+
 }
 
 .button {
@@ -77,34 +77,59 @@ body  {
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
-  cursor: wait;
+  
 }
 
 .fa:hover {
   opacity: 0.7;
-	cursor: wait;
+
 }
 
 .topnav a.github {
-	cursor: url(templates/git.png) 2 2, wait;
+	cursor: url(templates/git.png) 2 2;
 }
 .topnav a.home {
-	cursor: url(templates/home.png) 2 2, wait;
+	cursor: url(templates/home.png) 2 2;
 }
 .topnav a.about {
-	cursor: url(templates/about.png) 2 2 , wait;
+	cursor: url(templates/about.png) 2 2 ;
 }
 .topnav a.fam {
-	cursor: url(templates/family.png) 2 2, wait;
+	cursor: url(templates/family.png) 2 2;
 }
 .topnav a.jobs {
-	cursor: url(templates/jobs.png) 2 2, wait;
+	cursor: url(templates/jobs.png) 2 2;
 }
 .topnav a.sports {
-	cursor: url(templates/running.png) 2 2, wait;
+	cursor: url(templates/running.png) 2 2;
 }
 .topnav a.language {
-	cursor: url(templates/running.png) 2 2, wait;
+	cursor: url(templates/running.png) 2 2;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+.responsive {
+    width: "300x300";
+    height: auto;
 }
 
 
@@ -136,7 +161,7 @@ body  {
 
 <body>
 
-<div class="header"> Bem Vindo !
+<div id="head" class="header"> Bem Vindo !
   
 </div>
 <div id="container">
@@ -147,7 +172,7 @@ body  {
     
     <div class="card" style="auto">
 
-      <img src="main.jpg" alt="My image" width= "300x300" >
+      <img src="main.jpg" alt="My image" width= "300x300" class="responsive">
 
         <div class="card-body">
           <h4 class="card-title">Pedro Cabral</h4>
@@ -155,20 +180,21 @@ body  {
 	          <p class="card-text"> Leiria, Portugal </p>
             <p class="card-text">26 years old.</p>
             <a href="CV.pdf" class="button button4">See Profile</a>
+            
         </div>
     </div>
 
   </div>
-  <div class="topnav">
-    <script type = "text/javascript" src="myjs.js"> </script>
-    <a id = "Language" onclick=doLanguage(); class="language" src="templates/git.png">English</a>
-	  <a id = "home" img class="home" src="templates/home.png">Inicio</a>
-	  <a id = "about"  img class="about" src = "templates/about.png" >Sobre</a>
-	  <a id = "family" img class="fam" src="templates/family.png"> Família</a>
- 	  <a id = "jobs" img class="jobs" src="templates/jobs.png">Empregos</a>
-	  <a id = "run" img class="sports" src="templates/running.png" >Desporto</a>
-    <a id = "git" onclick=getGit(); class="github" src="templates/git.png"> GitHub</a>
+  <div class="topnav" id="myTopnav">
+    <script type ="text/javascript" src="myjs.js"> </script>
     
+	  <a id = "home" class="home" img class="home" src="templates/home.png">Inicio</a>
+	  <a id = "about"  class="about" img class="about" src = "templates/about.png" >Sobre</a>
+	  <a id = "family" class="family" img class="fam" src="templates/family.png"> Família</a>
+ 	  <a id = "jobs" class="jobs" img class="jobs" src="templates/jobs.png">Empregos</a>
+	  <a id = "run" class="run" img class="sports" src="templates/running.png" >Desporto</a>
+    <a id = "git" onclick=getGit(); class="github" src="templates/git.png"> GitHub</a>
+    <a id = "Language" onclick=changeLanguage(); class="language" src="templates/git.png">English</a>
   </div>
 
     
