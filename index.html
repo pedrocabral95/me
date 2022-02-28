@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pedro Cabral</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body  {
+  margin: 1%;
+  padding: 20px;
+  background-color: #f1f1f1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* Style the header */
+.header {
+  background-color:#f1f1f1;
+  padding: 20px;
+  width: auto;
+  text-align: center;
+}
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.contents {
+  float: left;
+  width: 50%;
+  background-color: #f1f1f1;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.active {
+  background-color: #4CAF50;
+
+}
+
+.button {
+  background-color: #65e969; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display:block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button4 {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  position: relative;
+  border: 2px solid #e7e7e7;
+}
+.button1 {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  display:inline-grid;
+  border: 2px solid #e7e7e7;
+}
+.button4:hover {
+  background-color: #646262;
+}
+.button1:hover {
+  background-color: #ada6a6;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+
+  
+}
+
+.fa:hover {
+  opacity: 0.7;
+
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+  .contents {   
+    width: auto;
+    padding: 0;
+  
+  }
+  .topnav a {
+    float: none;
+    width: auto;
+  }
+  .button1 {
+    float: none;
+    width: auto;
+  }
+  .menu {
+    float: right;
+    width: auto;
+  }
+}
+}
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: auto;
+  }
+  .button1 {
+    float: none;
+    width: auto;
+  }
+  .menu {
+    float: right;
+    width: auto;
+  }
+}
+
+#container {
+  height: auto;
+  background: #f1f1f1;
+}
+
+#menu  {
+  float: auto;
+  width: auto ;
+  background: #f1f1f1;
+  
+}
+#contents  {
+  float: right;
+  background: #f1f1f1;
+}
+#footer  {
+  margin-top: auto;
+  background: #666;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script> 
+var aLanguage = ["English","French","Portuguese"];
+var aSportText = ["Desde pequeno que o  desporto é um pilar essencial do meu estilo de vida, fazendo parte da minha rotina. Correr e Jogar futebol são, definitivamente, o que mais me motiva a fazer desporto, para alem de me ajudar fisica e psicologicamente."];
+var aSobre = ["Sobre","About" ,"Au sujet de Moi"];
+var aInicio = ["Início","Home","Accueil"];
+var aFamilia = ["Família","Family" ,"Famille"];
+var aDesporto = ["Deportos", "Sports" ,"Sport"];
+var aJobs = ["Empregos","Jobs" ,"Emploi"];
+var aHello = ["Bem Vindo!", "Hello World!", "Salut!"]
+
+function getIstMail() {
+    window.location = "";
+}
+function getGmail() {
+    window.location = "";
+}
+function getLinkedIn() {
+    window.location = "https://www.linkedin.com/in/pedro-cabral-570a30194/";
+}
+
+function getInstagram() {
+    window.location = ""
+}
+function getStrava() {
+    window.location = "https://www.strava.com/athletes/9607376"
+}
+function getGit() {
+    window.location = "https://github.com/pedrocabral95"
+}
+function doHome(lang){
+
+}
+function doAbout(lang){
+
+}
+function doFamily(lang){
+
+}
+function doJobs(lang){
+}
+function doSports(lang){
+ 
+    let a = document.getElementById("ini") 
+    console.log(a)
+    a.textContent +=aSportText[0];
+
+}
+
+
+function doLang(lang){
+    var topnav;
+    topnav = document.getElementById("home");
+    topnav.textContent = aInicio[lang];
+    topnav = document.getElementById("about");
+    topnav.textContent = aSobre[lang] ;
+    topnav = document.getElementById("family");
+    topnav.textContent = aFamilia[lang] ;
+    topnav = document.getElementById("jobs");
+    topnav.textContent = aJobs[lang] ;
+    topnav = document.getElementById("run");
+    topnav.textContent = aDesporto[lang];
+
+}
+
+
+
+
+
+</script>
+<div id="head" class="header"> 
+  <h2> Welcome to Pedro's Page! </h2>
+  
+</div>
+<div id="container"></div>
+  <div id="menu">
+    <div class="card" style="auto">
+      <img src="main.jpg" class="center" alt="My image"  class="responsive">
+        <div class="card-body">
+          <a href="CV.pdf" class="button button4">See Profile <img class="en" src="templates/cv.png"></a>
+          <a id = "English" class= "button button4" onclick=doLang(1);> English <img class="en" src="templates/en.png"></a>
+          <a id = "Portuguese" class= "button button4" onclick=doLang(0);> Portuguese <img class="pt" src="templates/pt.png"> </a>
+          <a id = "French" class= "button button4" onclick=doLang(2);>  French <img class="fr" src="templates/fr.png"></a>  
+        </div>
+    </div>
+  
+  <div class="topnav" id="myTopnav">
+	  <a id = "home" class="home" src="templates/home.png"> Inicio </a>
+	  <a id = "about"  class="about">Sobre</a>
+	  <a id = "family" class="family">Família</a>
+ 	  <a id = "jobs" class="jobs">Empregos</a>
+	  <a id = "run" class="run"  onclick=doSports(1);>Desporto</a>
+  </div>
+</div>
+    
+  
+
+<div id="contents">
+ 
+    <h2>home</h2>
+   
+</div>
+  
+  
+
+
+</body>
+<div id="footer"> Find Me :
+    
+  <a id = "git"  class= "button button1" onclick=getGit();><img class="git" src="templates/git.png"></a>
+  <a id = "instagram"  class= "button button1" onclick=getInstagram();><img class="git" src="templates/instagram.png"></a>
+  <a id = "linkedin"  class= "button button1" onclick=getLinkedIn();><img class="git" src="templates/linkedin.png"></a>
+  <a id = "strava"  class= "button button1" onclick=getStrava();> <img class="git" src="templates/strava.png"></a>
+  <a id = "gmail"  class= "button button1" onclick=getGmail();> <img class="git" src="templates/gmail.png"></a>
+  <a id = "istMail"  class= "button button1" onclick=getIstMail();> <img class="git" src="templates/logo.png"></a>
+
+</div>
+</html>

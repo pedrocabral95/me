@@ -24,10 +24,8 @@ function changeLanguage() {
 
 function doLanguage(){
     var topnav;
-    topnav = document.getElementById("Language");
-    topnav.textContent = aLanguage[lang] ;
     topnav = document.getElementById("home");
-    topnav.textContent =aInicio[lang] ;
+    topnav.textContent =aInicio[lang] + "home";
     topnav = document.getElementById("about");
     topnav.textContent = aSobre[lang] ;
     topnav = document.getElementById("family");
