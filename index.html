@@ -170,7 +170,7 @@ body  {
 </head>
 
 <body>
-  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="main.js"> console.log(lang); </script>
 
 <div id="head" class="header"> 
   <h2> Welcome to Pedro's Page! </h2>
@@ -189,18 +189,18 @@ body  {
     </div>
   
   <div class="topnav" id="myTopnav">
-	  <a id = "home" class="home" src="templates/home.png"> Inicio </a>
-	  <a id = "about"  class="about">Sobre</a>
-	  <a id = "family" class="family">Família</a>
- 	  <a id = "jobs" class="jobs">Empregos</a>
-	  <a id = "run" class="run"  onclick=doSports(1);>Desporto</a>
+	  <a id = "home" class="home" onclick=doHome();> Inicio </a>
+	  <a id = "about"  class="about" onclick=doAbout();>Sobre</a>
+	  <a id = "family" class="family" onclick=doFamily();>Família</a>
+ 	  <a id = "jobs" class="jobs" onclick=doJobs(); >Empregos</a>
+	  <a id = "run" class="run" onclick=doSports();>Desporto</a>
   </div>
 </div>
     
   
 
 <div id="contents">
- 
+  <h3>HEy ou</h3>
     <h2>home</h2>
    
 </div>
