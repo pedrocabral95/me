@@ -1,3 +1,4 @@
+
 var aLanguage = ["English","French","Portuguese"];
 var aSportText = ["Desde pequeno que o  desporto é um pilar essencial do meu estilo de vida,\
 								 fazendo parte da minha rotina. Correr e Jogar futebol são, definitivamente, \
@@ -6,6 +7,7 @@ var aSportText = ["Desde pequeno que o  desporto é um pilar essencial do meu es
 								 "rien"];
 var aSobre = ["Sobre","About" ,"Au sujet de Moi"];
 var aInicio = ["Início","Home","Accueil"];
+var aAtivitys = ["Últimas Atividades", "Last Activities", "Dérniers Activités"];
 var aFamilia = ["Família","Family" ,"Famille"];
 var aDesporto = ["Desportos", "Sports" ,"Sport"];
 var aJobs = ["Empregos","Jobs" ,"Emploi"];
@@ -68,7 +70,7 @@ function getInstagram() {
   window.open("","Instagram");
 }
 function getStrava() {
-  window.open("https://www.strava.com/athletes/9607376", "Strava")
+  window.open("https://www.strava.com/athletes/pedrocabral95", "Strava")
 }
 function getGit() {
   window.open("https://github.com/pedrocabral95","GitHub")
@@ -102,8 +104,12 @@ function doSports(){
 		a.innerHTML += "<br>" + aSportText[0] + "</br>";
 	else
 		a.innerHTML += "<br>" + aSportText[lan.getLang()] + "</br>";
+		a.innerHTML += "<br>" + aAtivitys[lan.getLang()] + "</br>";
 		a.innerHTML += "<iframe height='405' width='590' frameborder='0' allowtransparency='true' scrolling='yes' src='https://www.strava.com/activities/6730387205/embed/4390ab49c3101752304047a4d93dc9c035c7043c'></iframe>"
-}
+		a.innerHTML += "<iframe height='405' width='590' frameborder='0' allowtransparency='true' scrolling='yes' src='https://www.strava.com/activities/6707982869/embed/80cfaa2b5d5c46268893e6eed4a9995be9627948'></iframe>"
+		a.innerHTML += "<iframe height='405' width='590' frameborder='0' allowtransparency='true' scrolling='yes' src='https://www.strava.com/activities/6683317422/embed/57dd29b6ffb16b321f4a6231d74f440757b4c7d1'></iframe>"
+
+	}
 
 
 function doLang(lang){
