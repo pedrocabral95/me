@@ -59,9 +59,6 @@ let lan = new Language();
 function getIstMail() {
   window.location.href = "mailto:pedro.alves.cabral@tecnico.ulisboa.pt";
 }
-function getGmail() {
-  window.location.href = "mailto:pedro25alves@gmail.com";
-}
 function getLinkedIn() {
   window.open("https://www.linkedin.com/in/pedro-cabral-570a30194/","LinkedIn");
 }
