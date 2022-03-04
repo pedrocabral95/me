@@ -11,7 +11,6 @@ var aTech = ["C","Java","Python","C++","JavaScript","Prolog","VBA","Bash","Assem
 var aSys = ["Linux","Mac","Windows"]
 var aFrameWks = ["BootStrap","HTML","CSS","Hibernate","Django","Flask","Spring","Hibernate"]
 var aTools = ["Atom","Sublime Text","Visual Studio", "Eclipse","Word","Excel","UML"]
-const para = /\n/ ;
 class Language {
 	constructor(){
 		this.lang = 0;
@@ -60,11 +59,27 @@ function getIstMail() {
 function getLinkedIn() {
   window.open("https://www.linkedin.com/in/pedro-cabral-570a30194/","LinkedIn");
 }
-function doInflacao(pOne,qOne,pTwo,qTwo){
-	return (qOne*pTwo)/(qOne*pOne);
+
+function doDisplay(item){
+	let node = document.getElementById(item);
+
+	if (node.style.display == "none"){
+		node.style.display = "block";
+	}
+	else{
+		node.style.display = "none"
+	}
+
+}
+function doInflacao(){
+	let a = document.getElementById("contents");
+	let b = document.createElement("info")
+	a.appendChild(b);
+	b.innerHTML= "<span>A taxa de inflação representa a subida percentual do preço num determinado período. <button type='button' onclick=this.parentNode.style.display='none'>Hide</>"
+
 }
 function getInstagram() {
-  window.open("","Instagram");
+  window.open("https://www.instagram.com/p.cabral06/","Instagram");
 }
 function getStrava() {
   window.open("https://www.strava.com/athletes/pedrocabral95", "Strava")
@@ -77,33 +92,14 @@ function doHome(){
 	let a = document.getElementById("contents") ;
 	a.innerHTML = "<h2>" +  aInicio[lan.getLang()] + "</h2>";
 
-	//English
-	if (lan.getLang() == 1){
-		a.innerHTML += "<p>Some stuff of Management</p>"
-		a.innerHTML += "<ul>"
-		a.innerHTML += "<li></li>" 
-		a.innerHTML += "</ul>"
-	}
-	//French
-	if (lan.getLang() == 2){
-		a.innerHTML += "<br></br>"
-		a.innerHTML += "<ul>"
-		a.innerHTML += "<li>" 
-		a.innerHTML += "</ul>"
-	}
-	//PT
-	else {
-		a.innerHTML += "<p>Gestão</p>"
-		a.innerHTML += "<p> Calcular inflação num periodo </p>"
-		a.innerHTML += "<p>Quantidade Ano 1 <input type='Number'  id ='qOne' name='qOne'></p>"
-		a.innerHTML += "<p>Preço Ano 1 <input type='Number' id ='pOne' name='pOne'></p>"
-		a.innerHTML += "<p>Quantidade Ano 2<input type='Number'  id ='qTwo' name='qTwo'></p>"
-		a.innerHTML += "<p>Preço Ano 2 <input type='Number'  id ='pTwo' name='pTwo'> <input type='submit'value='Calcular'></p>"
-		a.innerHTML += "<p> Inflação no Ano 1 a 2 foi de " + console.log(doInflacao(parseInt(document.getElementById("subPOne").value),parseInt(document.getElementById("qOne").value),parseInt(document.getElementById("pTwo").value),parseInt(document.getElementById("qTwo").value))) + "</p>";
-		a.innerHTML += "<li></li>" 
-		a.innerHTML += "</ul>"
+	let b = document.createElement("gestao");
+	b.innerHTML = "<div> Gestão</div>"
+	a.appendChild(b);
+	let c = document.createElement("inflacao")
+	c.innerHTML ="<div><button type='button' onclick=doInflacao()>Calcular inflação num periodo </>"
+	a.appendChild(c)
 
-	}
+	
 }
 function doAbout(){
 	lan.setAtual(1);
@@ -152,42 +148,43 @@ function doProjects(){
 
 	//English
 	if (lan.getLang() == 1){
+
+		//1
 		a.innerHTML += "<h3>Work</h3>"
 		a.innerHTML += "<lu>"
-		a.innerHTML += "<li>" + "<b>VBA Developer</b>"+ " @ <a href=https://www.exercito.pt/pt/> Portuguese Army</a>  [Jan '18 - Sep'20] </li>"
+		a.innerHTML += "<li>" + "<b>VBA Developer</b>"+ " @ <a href=https://www.exercito.pt/pt/> Portuguese Army</a>  [Jan '18 - Sep'20] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Development of a Route plan which identify a soldier or a delegation when they are moving to another basement.</p>" 
 		a.innerHTML +=	"<pre>	Development of the router plan model.</pre>"
 		a.innerHTML +=	"<pre>	Development of the data migration to excel file.</pre>"
 		a.innerHTML += "<p>Technology/Tools/System in use : " + aTech[6] + ", " + aTools[5] + ", " + aTools[2] + ", " + aSys[2] +  "</p>";
-		
-
-		a.innerHTML += "<li>" + "<b>Website </b>" + "  @  Own </a>  [Feb'20 - Current] </li>"
+		//2
+		a.innerHTML += "<li>" + "<b>Website </b>" + "  @  Own </a>  [Feb'20 - Current] " +  "  <img src='templates/one.png'/>"  + "</li>"
 		a.innerHTML += "<p>Development of a my website.</p>" 
 		a.innerHTML += "<a> Technology/Tools/System in use : " + aTech[4] + ", " + aFrameWks[1] + ", " + aFrameWks[2] +", " + aTools[2] + ", " + aSys[2] + "/"+ aSys[0] + "/" + aSys[1] +  "</a>";
 		//------------------------------------------------------------------------\\
 		a.innerHTML += "<h3>Academic</h3>"
 		//1
-		a.innerHTML += "<li>" + "<b> Network routing protocols</b>" + " @ Computers and Networks  [Jan'22 - Fev'22] </li>"
+		a.innerHTML += "<li>" + "<b> Network routing protocols</b>" + " @ Computers and Networks  [Jan'22 - Fev'22] " +  "  <img src='templates/one.png'/>"  + "</li>"
 		a.innerHTML += "<p>Development of routing protocols Distance Vector, Distance Vector with Path Poising , Path Vector e Link-State .</p>" 
 		a.innerHTML += "<pre>	Implement algorithms: Distance Vector, Distance Vector with Path Poising , Path Vector e Link-State.</pre>"
 		a.innerHTML += "<p> Technology/Tools/System in use: " + aTech[0] + ", " + aTech[3] + ", " + aTech[10] + ", " + aTools[2] + ", " + aSys[0] +  "</p>";
 		a.innerHTML += "<p></p>"
 		//2
-		a.innerHTML += "<li>" + "<b> Reliable data transfering using ARQ approach</b>" + "@ Computers and Networks  [Jan'22 - Fev'22] </li>"
+		a.innerHTML += "<li>" + "<b> Reliable data transfering using ARQ approach</b>" + "@ Computers and Networks  [Jan'22 - Fev'22] " +  "  <img src='templates/one.png'/>"  + " </li>"
 		a.innerHTML += "<p>Devolpment of the slides windows with protocols Go back N, Stop and Wait e Selective Repeat .</p>" 
 		a.innerHTML +=	"<pre>	Development of Client et Server.</pre>"
 		a.innerHTML +=	"<pre>	Implement algorithms: Go back N, Stop and Wait e Selective Repeat.</pre>"
 		a.innerHTML += "<p>Technology/Tools/System in use: " + aTech[0] + ", " + aTech[3] + ", " + aTech[10] + ", " + aTools[2] + ", " + aSys[0] +  "</p>";
 		a.innerHTML += "<p></p>"
 		//3
-		a.innerHTML += "<li>" + "<b> Bussiness Process Managements </b>" + "@ System Analysis and Modeling  [Jan'22 - Fev'22] </li>"
+		a.innerHTML += "<li>" + "<b> Bussiness Process Managements </b>" + "@ System Analysis and Modeling  [Jan'22 - Fev'22] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Devolpment of business, tecnology and services processes of a System propose .</p>" 
 		a.innerHTML +=	"<pre>	Using SysML/UML</pre>"
 		a.innerHTML += "<p>Technology/Tools/System in use: UML , Camunda , ArchiMate, Enterprise Software, " + aSys[2] + "</p>";
 		a.innerHTML += "<p></p>"
 
 		//4
-		a.innerHTML += "<li>" + "<b> Search Algorithms </b>" + "@ Analysis and Synthesis of Algorithms  [Mar'21 - May'21] </li>"
+		a.innerHTML += "<li>" + "<b> Search Algorithms </b>" + "@ Analysis and Synthesis of Algorithms  [Mar'21 - May'21] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Desenvolver algoritmos de procura: Dinic .</p>" 
 		a.innerHTML += "<pre>	Procura greedy : </pre>"
 		a.innerHTML += "<pre>	Procura não greedy:</pre>"
@@ -195,19 +192,19 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//5
-		a.innerHTML += "<li>" + "<b> Create de Interfaces </b>" + "@ Human/Compution interation [Mar'21 - May'21] </li>"
+		a.innerHTML += "<li>" + "<b> Create de Interfaces </b>" + "@ Human/Compution interation [Mar'21 - May'21] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Development of  interfaces by advantages/disadvantages of being human .</p>" 
 		a.innerHTML += "<p>Technology/Tools/System in use: "+ aTech[4] + ", P5.js,  " + aTools[2] +", " + aSys[0]+ "/" + aSys[1]+ "/" +aSys[2] + "</p>";
 		a.innerHTML += "<p></p>"
 
 		//6
-		a.innerHTML += "<li>" + "<b> Game/Piece of Art /Room using Mesh/Material </b>" + "@ Graphic Computacion   [Oct'20 - Dec'20] </li>"
+		a.innerHTML += "<li>" + "<b> Game/Piece of Art /Room using Mesh/Material </b>" + "@ Graphic Computacion   [Oct'20 - Dec'20] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Game/Piece of Art /Room development using Mesh , Textures , Lights, kinectics of 3D objects .</p>" 
 		a.innerHTML += "<p>Technology/Tools/System in use: "+ aTech[4] + ", Three.js ,  " + aTools[2] +", " + aSys[0]+ "/" + aSys[1]+ "/" +aSys[2] + "</p>";
 		a.innerHTML += "<p></p>"
 
 		//7
-		a.innerHTML += "<li>" + "<b> File System </b>" + "@ Operating Systems  [Out'19 - Dec'19] </li>"
+		a.innerHTML += "<li>" + "<b> File System </b>" + "@ Operating Systems  [Out'19 - Dec'19] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>The main goal of the application is to manipulate a File System who loads files on the server task which are maintained in non-volatile RAM. The architecture was based in data structures, \
 						sorting algorithms, pointers and dynamically allocated memory.</p>" 
 		a.innerHTML += "<p>This File System supports concurrent accesses and was executed with slaves tasks. To guarantee parallelism processes was used semaphores and mutex lockers (latch).\
@@ -220,7 +217,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//8
-		a.innerHTML += "<li>" + "<b> Contact Management </b>" + "@ Introducing to Algorithms and Data Structures  [Apr'19 - May'19] </li>"
+		a.innerHTML += "<li>" + "<b> Contact Management </b>" + "@ Introducing to Algorithms and Data Structures  [Apr'19 - May'19] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>The main goal of the application is to manipulate a Contact Management. The architecture was based in data structures, sorting algorithms, pointers and dynamically allocated memory.\
 						 All commands were given in command line. .</p>" 
 		a.innerHTML += "<pre>	Development of Contact Management </pre>"
@@ -229,15 +226,15 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//9
-		a.innerHTML += "<li>" + "<b> Binary Game </b>" + "@ Logic for  Programming  [Abr'19 - Mai'19] </li>"
+		a.innerHTML += "<li>" + "<b> Binary Game </b>" + "@ Logic for  Programming  [Abr'19 - Mai'19]" +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p> Create a binary game using a logical programming language.</p>" 
 		a.innerHTML += "<pre>	Development of Syntax and Rule of Binary Game </pre>"
 		a.innerHTML += "<pre>	Development of main and auxiliar functions </pre>"
 		a.innerHTML += "<p>Technology/Tools/System in use: SWI-Prolog ,Shell , " + aTools[2] +", " + aSys[0]+ "/" + aSys[1]+ "/" +aSys[2] + "</p>";
 		a.innerHTML += "<p></p>"
 
-		//10
-		a.innerHTML += "<li>" + "<b> Room Reservation System </b>" + "@ Introducing to Algorithms and Data Structures  [Feb'19 - Apr'19] </li>"
+		//10;
+		a.innerHTML += "<li>" + "<b> Room Reservation System </b>" + "@ Introducing to Algorithms and Data Structures  [Feb'19 - Apr'19] " +  "  <img src='templates/one.png'/>"  + " </li>" ;
 		a.innerHTML += "<p>The main goal of the application is to manipulate a room reservations system handling with multiple requests.\
 					 The architecture was based in data structures and sorting algorithms."
 		a.innerHTML += "All commands were given in command line.</p>" 
@@ -247,7 +244,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//11
-		a.innerHTML += "<li>" + "<b> Arcade Spaceship Game </b>" + "@ Introduction to Computer Architecture  [Sep'18 - Dec'19] </li>"
+		a.innerHTML += "<li>" + "<b> Arcade Spaceship Game </b>" + "@ Introduction to Computer Architecture  [Sep'18 - Dec'19] " +  "  <img src='templates/more.png'/>"  + " </li>";
 		a.innerHTML += "<p>The main goal of the application was to create a Spaceship game. \
 							The architecture was based in PEPE CPU simulator with 8 bits.</p>" 
 		a.innerHTML += "<p> All commands were given by a peripheric keyboard.</p>" 
@@ -256,7 +253,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//12
-		a.innerHTML += "<li>" + "<b> College </b>" + "@ Object-Oriented Programing [Sep'18 - Dec'19] </li>";
+		a.innerHTML += "<li>" + "<b> College </b>" + "@ Object-Oriented Programing [Sep'18 - Dec'19] " +  "  <img src='templates/more.png'/>"  + " </li>";
 		a.innerHTML += "<p>The main goal of the application was to manage a College app activity, like Courses, students, teachers and surveys.\
 						The architecture was based in Facade, State and Observer design patterns.</p>"
 		a.innerHTML += "<p>All commands were given in command line</p>" 
@@ -267,7 +264,7 @@ function doProjects(){
 		
 
 		//13
-		a.innerHTML += "<li>" + "<b> Project Planning Management </b>" + "@ Introducing to Algorithms and Data Structures  [Apr'18 - May'18] </li>"
+		a.innerHTML += "<li>" + "<b> Project Planning Management </b>" + "@ Introducing to Algorithms and Data Structures  [Apr'18 - May'18]" +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>The main goal of the application is to manipulate a project planning management based in multiples processes. \
 						The architecture was based in data structures, sorting algorithms, pointers and dynamically allocated memory.</p>" 
 		a.innerHTML += "<p>All commands were given in command line</p>"
@@ -279,7 +276,7 @@ function doProjects(){
 
 
 		//14
-		a.innerHTML += "<li>" + "<b> Sparse Matrix Management  </b>" + "@ Introducing to Algorithms and Data Structures  [Feb'18 - Apr'18] </li>"
+		a.innerHTML += "<li>" + "<b> Sparse Matrix Management  </b>" + "@ Introducing to Algorithms and Data Structures  [Feb'18 - Apr'18]" +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>The main goal of the application is to manipulate a sparse matrix in order to simulate a spreadsheet or an electronic circuit.\
 						 The architecture was based in data structures and sorting algorithms"
 		a.innerHTML += "All commands were given in command line.</p>" 
@@ -288,7 +285,7 @@ function doProjects(){
 		a.innerHTML += "<p>Technology/Tools/System in use: "+ aTech[0] + ", Shell , " + aTools[0] +", " + aSys[0]+ "</p>";
 		a.innerHTML += "<p></p>"
 		//15
-		a.innerHTML += "<li>" + "<b> GURU Words Game </b>" + "@ Foundations of Programming  [Sep'17 - Dec'17] </li>"
+		a.innerHTML += "<li>" + "<b> GURU Words Game </b>" + "@ Foundations of Programming  [Sep'17 - Dec'17]" +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>The main goal of the application was to create a dynamic game.\
 						 The architecture was based in abstract data type who evaluate a word formed by a given letters</p>" 
 		a.innerHTML += "<pre>	Development of Puzzle Game App Syntax and Rules</pre>"
@@ -304,39 +301,39 @@ function doProjects(){
 		a.innerHTML += "<h3>Professionais</h3>"
 		a.innerHTML += "<lu>"
 		//1
-		a.innerHTML += "<li>" + "<b>VBA Developer</b>"+ " @ <a href=https://www.exercito.pt/pt/> L'Armée Portugaise</a>  [Jan '18 - Sep '20] </li>"
+		a.innerHTML += "<li>" + "<b>VBA Developer</b>"+ " @ <a href=https://www.exercito.pt/pt/> L'Armée Portugaise</a>  [Jan '18 - Sep '20] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Development of a Route plan which identify a soldier or a delegation when they are moving to another basement.</p>" 
 		a.innerHTML +=	"<pre>	Development of the router plan model.</pre>"
 		a.innerHTML +=	"<pre>	Development of the data migration to excel file.</pre>"
 		a.innerHTML += "<p>Technology/Tools/System in use : " + aTech[6] + ", " + aTools[5] + ", " + aTools[2] + ", " + aSys[2] +  "</p>";
 		//2
-		a.innerHTML += "<li>" + "<b>Website </b>" + "  @  Own </a>  [Fev '20 - Current] </li>"
+		a.innerHTML += "<li>" + "<b>Website </b>" + "  @  Own </a>  [Fev '20 - Current] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Development of a my website.</p>" 
 		a.innerHTML += "<a> Technology/Tools/System in use : " + aTech[4] + ", " + aFrameWks[1] + ", " + aFrameWks[2] +", " + aTools[2] + ", " + aSys[2] + "/"+ aSys[0] + "/" + aSys[1] +  "</a>";
 
 		//------------------------------------------------------------------------\\
 		a.innerHTML += "<h3>Académicos</h3>"
 		//1
-		a.innerHTML += "<li>" + "<b> Network routing protocols</b>" + " @ Computers and Networks  [Jan'22 - Fev'22] </li>"
+		a.innerHTML += "<li>" + "<b> Network routing protocols</b>" + " @ Computers and Networks  [Jan'22 - Fev'22] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Development of routing protocols Distance Vector, Distance Vector with Path Poising , Path Vector e Link-State .</p>" 
 		a.innerHTML += "<pre>	Implement algorithms: Distance Vector, Distance Vector with Path Poising , Path Vector e Link-State.</pre>"
 		a.innerHTML += "<p> Technology/Tools/System in use: " + aTech[0] + ", " + aTech[3] + ", " + aTech[10] + ", " + aTools[2] + ", " + aSys[0] +  "</p>";
 		a.innerHTML += "<p></p>"
 		//2
-		a.innerHTML += "<li>" + "<b> Reliable data transfering using ARQ approach</b>" + "@ Computers and Networks  [Jan'22 - Fev'22] </li>"
+		a.innerHTML += "<li>" + "<b> Reliable data transfering using ARQ approach</b>" + "@ Computers and Networks  [Jan'22 - Fev'22]" +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Devolpment of the slides windows with protocols Go back N, Stop and Wait e Selective Repeat .</p>" 
 		a.innerHTML +=	"<pre>	Development of Client et Server.</pre>"
 		a.innerHTML +=	"<pre>	Implement algorithms: Go back N, Stop and Wait e Selective Repeat.</pre>"
 		a.innerHTML += "<p>Technology/Tools/System in use: " + aTech[0] + ", " + aTech[3] + ", " + aTech[10] + ", " + aTools[2] + ", " + aSys[0] +  "</p>";
 		a.innerHTML += "<p></p>"
 		//3
-		a.innerHTML += "<li>" + "<b> Bussiness Process Managements </b>" + "@ System Analysis and Modeling  [Jan'22 - Fev'22] </li>"
+		a.innerHTML += "<li>" + "<b> Bussiness Process Managements </b>" + "@ System Analysis and Modeling  [Jan'22 - Fev'22] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Devolpment of business, tecnology and services processes of a System propose .</p>" 
 		a.innerHTML +=	"<pre>	Using SysML/UML</pre>"
 		a.innerHTML += "<p>Technology/Tools/System in use: UML , Camunda , ArchiMate, Enterprise Software, " + aSys[2] + "</p>";
 		a.innerHTML += "<p></p>"
 		//4
-		a.innerHTML += "<li>" + "<b> Search Algorithms </b>" + "@ Analysis and Synthesis of Algorithms  [Mar'21 - Mai'21] </li>"
+		a.innerHTML += "<li>" + "<b> Search Algorithms </b>" + "@ Analysis and Synthesis of Algorithms  [Mar'21 - Mai'21] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Desenvolver algoritmos de procura: Dinic .</p>" 
 		a.innerHTML += "<pre>	Procura greedy : </pre>"
 		a.innerHTML += "<pre>	Procura não greedy:</pre>"
@@ -344,19 +341,19 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//5
-		a.innerHTML += "<li>" + "<b> Create de Interfaces </b>" + "@ Human/Compution interation [Mar'21 - Mai'21] </li>"
+		a.innerHTML += "<li>" + "<b> Create de Interfaces </b>" + "@ Human/Compution interation [Mar'21 - Mai'21] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Development of  interfaces by advantages/disadvantages of being human .</p>" 
 		a.innerHTML += "<p>Technology/Tools/System in use: "+ aTech[4] + ", P5.js,  " + aTools[2] +", " + aSys[0]+ "/" + aSys[1]+ "/" +aSys[2] + "</p>";
 		a.innerHTML += "<p></p>"
 
 		//6
-		a.innerHTML += "<li>" + "<b> Game/Piece of Art /Room using Mesh/Material </b>" + "@ Graphic Computacion   [Oct'20 - Dec'20] </li>"
+		a.innerHTML += "<li>" + "<b> Game/Piece of Art /Room using Mesh/Material </b>" + "@ Graphic Computacion   [Oct'20 - Dec'20] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Game/Piece of Art /Room development using Mesh , Textures , Lights, kinectics of 3D objects .</p>" 
 		a.innerHTML += "<p>Technology/Tools/System in use: "+ aTech[4] + ", Three.js ,  " + aTools[2] +", " + aSys[0]+ "/" + aSys[1]+ "/" +aSys[2] + "</p>";
 		a.innerHTML += "<p></p>"
 
 		//7
-		a.innerHTML += "<li>" + "<b> File System </b>" + "@ Operating Systems  [Out'19 - Dec'19] </li>"
+		a.innerHTML += "<li>" + "<b> File System </b>" + "@ Operating Systems  [Out'19 - Dec'19]" +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>The main goal of the application is to manipulate a File System who loads files on the server task which are maintained in non-volatile RAM. The architecture was based in data structures, \
 						sorting algorithms, pointers and dynamically allocated memory.</p>" 
 		a.innerHTML += "<p>This File System supports concurrent accesses and was executed with slaves’ tasks. To guarantee parallelism processes was used semaphores and mutex lockers (latch).\
@@ -369,7 +366,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//8
-		a.innerHTML += "<li>" + "<b> Contact Management </b>" + "@ Introducing to Algorithms and Data Structures  [Apr'19 - May'19] </li>"
+		a.innerHTML += "<li>" + "<b> Contact Management </b>" + "@ Introducing to Algorithms and Data Structures  [Apr'19 - May'19]" +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>The main goal of the application is to manipulate a Contact Management. The architecture was based in data structures, sorting algorithms, pointers and dynamically allocated memory.\
 						 All commands were given in command line. .</p>" 
 		a.innerHTML += "<pre>	Development of Contact Management </pre>"
@@ -378,7 +375,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//9
-		a.innerHTML += "<li>" + "<b> Binary Game </b>" + "@ Logic for  Programming  [Abr'19 - Mai'19] </li>"
+		a.innerHTML += "<li>" + "<b> Binary Game </b>" + "@ Logic for  Programming  [Abr'19 - Mai'19] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p> Create a binary game using a logical programming language.</p>" 
 		a.innerHTML += "<pre>	Development of Syntax and Rule of Binary Game </pre>"
 		a.innerHTML += "<pre>	Development of main and auxiliar functions </pre>"
@@ -386,7 +383,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//10
-		a.innerHTML += "<li>" + "<b> Room Reservation System </b>" + "@ Introducing to Algorithms and Data Structures  [Feb'19 - Apr'19] </li>"
+		a.innerHTML += "<li>" + "<b> Room Reservation System </b>" + "@ Introducing to Algorithms and Data Structures  [Feb'19 - Apr'19] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>The main goal of the application is to manipulate a room reservations system handling with multiple requests.\
 					 The architecture was based in data structures and sorting algorithms."
 		a.innerHTML += "All commands were given in command line.</p>" 
@@ -396,7 +393,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//11
-		a.innerHTML += "<li>" + "<b> Arcade Spaceship Game </b>" + "@ Introduction to Computer Architecture  [Sep'18 - Dec'19] </li>"
+		a.innerHTML += "<li>" + "<b> Arcade Spaceship Game </b>" + "@ Introduction to Computer Architecture  [Sep'18 - Dec'19] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>The main goal of the application was to create a Spaceship game. \
 							The architecture was based in PEPE CPU simulator with 8 bits.</p>" 
 		a.innerHTML += "<p> All commands were given by a peripheric keyboard.</p>" 
@@ -405,7 +402,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//12
-		a.innerHTML += "<li>" + "<b> College </b>" + "@ Object-Oriented Programing [Sep'18 - Dec'19] </li>";
+		a.innerHTML += "<li>" + "<b> College </b>" + "@ Object-Oriented Programing [Sep'18 - Dec'19]" +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>The main goal of the application was to manage a College app activity, like Courses, students, teachers and surveys.\
 						The architecture was based in Facade, State and Observer design patterns.</p>"
 		a.innerHTML += "<p>All commands were given in command line</p>" 
@@ -415,7 +412,7 @@ function doProjects(){
 		a.innerHTML += "<p>Technology/Tools/System in use: "+ aTech[1] + ", UML, Eclipse, Shell, " +aSys[0] + "</p>" ;
 
 		//13
-		a.innerHTML += "<li>" + "<b> Project Planning Management </b>" + "@ Introducing to Algorithms and Data Structures  [Apr'18 - May'18] </li>"
+		a.innerHTML += "<li>" + "<b> Project Planning Management </b>" + "@ Introducing to Algorithms and Data Structures  [Apr'18 - May'18] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>The main goal of the application is to manipulate a project planning management based in multiples processes. \
 						The architecture was based in data structures, sorting algorithms, pointers and dynamically allocated memory.</p>" 
 		a.innerHTML += "<p>All commands were given in command line</p>"
@@ -427,7 +424,7 @@ function doProjects(){
 
 
 		//14
-		a.innerHTML += "<li>" + "<b> Sparse Matrix Management  </b>" + "@ Introducing to Algorithms and Data Structures  [Feb'18 - Apr'18] </li>"
+		a.innerHTML += "<li>" + "<b> Sparse Matrix Management  </b>" + "@ Introducing to Algorithms and Data Structures  [Feb'18 - Apr'18] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>The main goal of the application is to manipulate a sparse matrix in order to simulate a spreadsheet or an electronic circuit.\
 						 The architecture was based in data structures and sorting algorithms"
 		a.innerHTML += "All commands were given in command line.</p>" 
@@ -437,7 +434,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//15
-		a.innerHTML += "<li>" + "<b> GURU Words Game </b>" + "@ Foundations of Programming  [Sep'17 - Dec'17] </li>"
+		a.innerHTML += "<li>" + "<b> GURU Words Game </b>" + "@ Foundations of Programming  [Sep'17 - Dec'17] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>The main goal of the application was to create a dynamic game.\
 						 The architecture was based in abstract data type who evaluate a word formed by a given letters</p>" 
 		a.innerHTML += "<pre>	Development of Puzzle Game App Syntax and Rules</pre>"
@@ -456,41 +453,41 @@ function doProjects(){
 		
 		a.innerHTML += "<lu>"
 		//1
-		a.innerHTML += "<li>" + "<b> VBA Developer </b>" + " @ <a href=https://www.exercito.pt/pt/> Exército Português</a>  [Jan '18 - Set '20] </li>"
+		a.innerHTML += "<li>" + "<b> VBA Developer </b>" + " @ <a href=https://www.exercito.pt/pt/> Exército Português</a>  [Jan '18 - Set '20] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Desenvolvimento de Guias de Marcha que identificam um soldado ou comitiva dado um deslocamento para outro quartel.</p>" 
 		a.innerHTML +=	"<pre>	Desenvolver o modelo de guia de marcha.</pre>"
 		a.innerHTML +=	"<pre>	Desenvolver fluxo de informação para ficheiro de Excel.</pre>"
 		a.innerHTML += "<p>Tecnologia/Ferramenta/Sistema  em uso : " + aTech[6] + ", " + aTools[5] + ", " + aTools[2] + ", " + aSys[2] +  "</p>";
 		//2
-		a.innerHTML += "<li>" + "<b>Website </b>" + " @  Own </a>  [Fev '20 - Current] </li>"
+		a.innerHTML += "<li>" + "<b>Website </b>" + " @  Own </a>  [Fev '20 - Current] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<pre>	Desenvolvimento de Website.</pre>" 
 		a.innerHTML += "<a> Tecnologia/Ferramenta/Sistema em uso : " + aTech[4] + ", " + aFrameWks[1] + ", " + aFrameWks[2] +", " + aTools[2] + ", " + aSys[2] + "/"+ aSys[0] + "/" + aSys[1] +  "</a>";
 		
 		//------------------------------------------------------------------------\\
 		a.innerHTML += "<h3>Académicos</h3>"
 		//1
-		a.innerHTML += "<li>" + "<b> Protocolos de Encaminhamento na Internet</b>" + " @ Rede e Computadores  [Jan'22 - Fev'22] </li>"
+		a.innerHTML += "<li>" + "<b> Protocolos de Encaminhamento na Internet</b>" + " @ Rede e Computadores  [Jan'22 - Fev'22]" +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Desenvolvimento de protocolos Distance Vector, Distance Vector with Path Poising , Path Vector e Link-State .</p>" 
 		a.innerHTML += "<pre>	Implementar algoritmos: Distance Vector, Distance Vector with Path Poising , Path Vector e Link-State.</pre>"
 		a.innerHTML += "<p>Tecnologia/Ferramenta/Sistema  em uso : " + aTech[0] + ", " + aTech[3] + ", " + aTech[10] + ", " + aTools[2] + ", " + aSys[0] +  "</p>";
 		a.innerHTML += "<p></p>"
 
 		//2
-		a.innerHTML += "<li>" + "<b> Tranferencia Segura de dados baseado no protocolo UDP usando a abordagem ARQ </b>" + "@ Rede e Computadores  [Jan'22 - Fev'22] </li>"
+		a.innerHTML += "<li>" + "<b> Tranferencia Segura de dados baseado no protocolo UDP usando a abordagem ARQ </b>" + "@ Rede e Computadores  [Jan'22 - Fev'22]" +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Desenvolvimento de janelas deslizantes com protocolos Go back N, Stop and Wait e Selective Repeat .</p>" 
 		a.innerHTML += "<pre>	Desenvolver o Cliente e Servidor.</pre>"
 		a.innerHTML += "<pre>	Implementar algoritmos: Go back N, Stop and Wait e Selective Repeat.</pre>"
 		a.innerHTML += "<p>Tecnologia/Ferramenta/Sistema  em uso : " + aTech[0] + ", " + aTech[3] + ", " + aTech[10] + ", " + aTools[2] + ", " + aSys[0] +  "</p>";
 		
 		//3
-		a.innerHTML += "<li>" + "<b> Modelação Proposta Empresarial </b>" + "@ Análise e Modelação de Sistemas  [Jan'22 - Fev'22] </li>"
+		a.innerHTML += "<li>" + "<b> Modelação Proposta Empresarial </b>" + "@ Análise e Modelação de Sistemas  [Jan'22 - Fev'22] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Desenvolver camada de negócio, tecnologia e serviços de uma proposta empresarial .</p>" 
 		a.innerHTML += "<pre>	Uso de SysML/UML</pre>"
 		a.innerHTML += "<p>Tecnologia/Ferramenta/Sistema em uso : UML , Camunda , ArchiMate, Enterprise Software ." + aSys[2] + "</p>";
 		a.innerHTML += "<p></p>"
 
 		//4
-		a.innerHTML += "<li>" + "<b>Algoritmos de Procura </b>" + "@ Análise e Sintese de Algoritmos  [Mar'21 - Mai'21] </li>"
+		a.innerHTML += "<li>" + "<b>Algoritmos de Procura </b>" + "@ Análise e Sintese de Algoritmos  [Mar'21 - Mai'21] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Desenvolver algoritmos de procura: Dinic .</p>" 
 		a.innerHTML += "<pre>	Procura greedy : </pre>"
 		a.innerHTML += "<pre>	Procura não greedy:</pre>"
@@ -498,19 +495,19 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//5
-		a.innerHTML += "<li>" + "<b> Criação de Interfaces </b>" + "@ Interface Pessoa/Máquina  [Mar'21 - Mai'21] </li>"
+		a.innerHTML += "<li>" + "<b> Criação de Interfaces </b>" + "@ Interface Pessoa/Máquina  [Mar'21 - Mai'21] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Desenvolver interfaces dados vantagens/desvantagens do ser humano .</p>" 
 		a.innerHTML += "<p>Tecnologia/Ferramenta/Sistema em uso : "+ aTech[4] + ", P5.js,  " + aTools[2] +", " + aSys[0]+ "/" + aSys[1]+ "/" +aSys[2] + "</p>";
 		a.innerHTML += "<p></p>"
 
 		//6
-		a.innerHTML += "<li>" + "<b> Jogo/Peça de Arte/Sala via Mesh/Material </b>" + "@ Computação Gráfica  [Out'20 - Dez'20] </li>"
+		a.innerHTML += "<li>" + "<b> Jogo/Peça de Arte/Sala via Mesh/Material </b>" + "@ Computação Gráfica  [Out'20 - Dez'20] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Desenvolver jogo, peça de arte, sala explorando Mesh , Texturas , Luzes, Cinética, de objetos 3D .</p>" 
 		a.innerHTML += "<p>Tecnologia/Ferramenta/Sistema em uso : "+ aTech[4] + ", Three.js ,  " + aTools[2] +", " + aSys[0]+ "/" + aSys[1]+ "/" +aSys[2] + "</p>";
 		a.innerHTML += "<p></p>"
 
 		//7
-		a.innerHTML += "<li>" + "<b> Sistema de Ficheiros </b>" + "@ Sistemas Operativos  [Out'19 - Dez'19] </li>"
+		a.innerHTML += "<li>" + "<b> Sistema de Ficheiros </b>" + "@ Sistemas Operativos  [Out'19 - Dez'19] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Desenvolver um sistema de ficheiros que carrega ficheiros para um server com memoria RAM não volátil.</p>" 
 		a.innerHTML += "<p>Este Sistema de ficheiros garante acesso concorrido que é executado por tarefas escravas.Para garantir paralelismo foi \
 						usado semaforos e bloqueadores/trincos MUTEX.</p>"
@@ -520,7 +517,7 @@ function doProjects(){
 		a.innerHTML += "<p>Tecnologia/Ferramenta/Sistema em uso : "+ aTech[0] + ",Shell , " + aTools[0] +", " + aSys[0]+ "</p>";
 
 		//8
-		a.innerHTML += "<li>" + "<b> Gestão de Contatos </b>" + "@ Introdução Algoritmos e Estruturas de Dados  [Abr'19 - Mai'19] </li>"
+		a.innerHTML += "<li>" + "<b> Gestão de Contatos </b>" + "@ Introdução Algoritmos e Estruturas de Dados  [Abr'19 - Mai'19] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Desenvolver um sistema de gestão de Contatos.</p>" 
 		a.innerHTML += "<pre>	Desenvolver sistema de Gestão de Contatos </pre>"
 		a.innerHTML += "<pre>	Criação de Scipts em Shell para testes</pre>"
@@ -528,7 +525,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//9
-		a.innerHTML += "<li>" + "<b> Jogo Binário </b>" + "@ Logica Programação  [Abr'19 - Mai'19] </li>"
+		a.innerHTML += "<li>" + "<b> Jogo Binário </b>" + "@ Logica Programação  [Abr'19 - Mai'19] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p> Desenvolver um jogo de binário.</p>" 
 		a.innerHTML += "<pre>	Desenvolver sistema de Gestão de Contatos </pre>"
 		a.innerHTML += "<pre>	Criação de Scipts em Shell para testes</pre>"
@@ -536,7 +533,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//10
-		a.innerHTML += "<li>" + "<b> Sistema de Reservas de Salas </b>" + "@ Introdução Algoritmos e Estruturas de Dados  [Fev'19 - Abr'19] </li>"
+		a.innerHTML += "<li>" + "<b> Sistema de Reservas de Salas </b>" + "@ Introdução Algoritmos e Estruturas de Dados  [Fev'19 - Abr'19] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Desenvolver um sistema de Reservas de salas para multiplos pedidos de reserva.</p>" 
 		a.innerHTML += "<pre>	Desenvolver Sistema de Reservas de Salas </pre>"
 		a.innerHTML += "<pre>	Criação de Scipts em Shell para testes</pre>"
@@ -545,7 +542,7 @@ function doProjects(){
 
 
 		//11
-		a.innerHTML += "<li>" + "<b> Jogo Arcade de Nave Espacial </b>" + "@ Introdução Arquitetura de Computadores  [Set'18 - Dez'19] </li>"
+		a.innerHTML += "<li>" + "<b> Jogo Arcade de Nave Espacial </b>" + "@ Introdução Arquitetura de Computadores  [Set'18 - Dez'19] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Desenvolver um Jogo Arcade de Nave Espacial em assembly num Processador de Ensino -> PEPE.</p>" 
 		a.innerHTML += "<pre>	Desenvolver Jogo Arcade de Nave Espacial </pre>"
 		a.innerHTML += "<p>Tecnologia/Ferramenta/Sistema em uso : "+ aTech[8] + ",PEPE , " + aTools[0] +", " +aSys[2] + "</p>" ;
@@ -553,7 +550,7 @@ function doProjects(){
 		
 
 		//12
-		a.innerHTML += "<li>" + "<b> Universidade </b>" + "@ Programação com Objetos  [Set'18 - Dez'19] </li>"
+		a.innerHTML += "<li>" + "<b> Universidade </b>" + "@ Programação com Objetos  [Set'18 - Dez'19] " +  "  <img src='templates/more.png'/>"  + " </li>"
 		a.innerHTML += "<p>Desenvolver uma Universidade com recurso a padroes de desenho e linguagem de programação orientada a objetos.</p>" 
 		a.innerHTML += "<pre>	Desenvolvimento Universidade </pre>"
 		a.innerHTML += "<pre>	Implementação padroes de desenho : Façade , State e Observer </pre>"
@@ -562,14 +559,14 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//13
-		a.innerHTML += "<li>" + "<b> Gestão de Planeamento de Projetos </b>" + "@ Introdução Algoritmos e Estruturas de Dados  [Abr'18 - Mai'18] </li>"
+		a.innerHTML += "<li>" + "<b> Gestão de Planeamento de Projetos </b>" + "@ Introdução Algoritmos e Estruturas de Dados  [Abr'18 - Mai'18] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Desenvolver um sistema de gestão de Planeamento de Projetos.</p>" 
 		a.innerHTML += "<pre>	Desenvolver sistema de Gestão de Planeamento de Projetos </pre>"
 		a.innerHTML += "<pre>	Criação de Scipts em Shell para testes</pre>"
 		a.innerHTML += "<p>Tecnologia/Ferramenta/Sistema em uso : "+ aTech[0] + ",Shell , " + aTools[0] +", " + aSys[0]+ "</p>";
 		a.innerHTML += "<p></p>"
 		//14
-		a.innerHTML += "<li>" + "<b> Otimização de Matrizes Esparsas </b>" + "@ Introdução Algoritmos e Estruturas de Dados  [Fev'18 - Abr'18] </li>"
+		a.innerHTML += "<li>" + "<b> Otimização de Matrizes Esparsas </b>" + "@ Introdução Algoritmos e Estruturas de Dados  [Fev'18 - Abr'18] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Desenvolver um sistema de Otimização de Matrizes Esparsas.</p>" 
 		a.innerHTML += "<pre>	Desenvolver Otimização de Matrizes Esparsas </pre>"
 		a.innerHTML += "<pre>	Criação de Scipts em Shell para testes</pre>"
@@ -577,7 +574,7 @@ function doProjects(){
 		a.innerHTML += "<p></p>"
 
 		//15
-		a.innerHTML += "<li>" + "<b> Jogo GURU Palavras </b>" + "@ Fundamentos de Programação  [Set'17 - Dez'17] </li>"
+		a.innerHTML += "<li>" + "<b> Jogo GURU Palavras </b>" + "@ Fundamentos de Programação  [Set'17 - Dez'17] " +  "  <img src='templates/one.png'/>"  + " </li>" 
 		a.innerHTML += "<p>Desenvolver Jogo GURU Palavra Single e Multiplayer.</p>" 
 		a.innerHTML += "<pre>	Desenvolver Jogo GURU Palavra </pre>"
 		a.innerHTML += "<pre>	Criação de Scipts em Shell para testes</pre>"
@@ -648,15 +645,15 @@ function doLang(lang){
     var topnav;
 		lan.setLang(lang);
     topnav = document.getElementById("home");
-    topnav.textContent = aInicio[lan.getLang()];
+    topnav.innerHTML = aInicio[lan.getLang()] + "<img src='templates/home.png'/>";
     topnav = document.getElementById("about");
-    topnav.textContent = aSobre[lan.getLang()] ;
+    topnav.innerHTML = aSobre[lan.getLang()]+ "<img src='templates/about.png'/>";
     topnav = document.getElementById("projects");
-    topnav.textContent = aProjetos[lan.getLang()] ;
+    topnav.innerHTML = aProjetos[lan.getLang()] + "<img src='templates/projects.png'/>";
     topnav = document.getElementById("jobs");
-    topnav.textContent = aJobs[lan.getLang()] ;
+    topnav.innerHTML = aJobs[lan.getLang()] + "<img src='templates/jobs.png'/>";
     topnav = document.getElementById("run");
-    topnav.textContent = aDesporto[lan.getLang()];
+    topnav.innerHTML = aDesporto[lan.getLang()] + "<img src='templates/running.png'/>";
 
 }
 
