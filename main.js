@@ -60,7 +60,9 @@ function getIstMail() {
 function getLinkedIn() {
   window.open("https://www.linkedin.com/in/pedro-cabral-570a30194/","LinkedIn");
 }
-
+function doInflacao(pOne,qOne,pTwo,qTwo){
+	return (qOne*pTwo)/(qOne*pOne);
+}
 function getInstagram() {
   window.open("","Instagram");
 }
@@ -77,17 +79,29 @@ function doHome(){
 
 	//English
 	if (lan.getLang() == 1){
+		a.innerHTML += "<p>Some stuff of Management</p>"
+		a.innerHTML += "<ul>"
+		a.innerHTML += "<li></li>" 
+		a.innerHTML += "</ul>"
+	}
+	//French
+	if (lan.getLang() == 2){
 		a.innerHTML += "<br></br>"
 		a.innerHTML += "<ul>"
 		a.innerHTML += "<li>" 
 		a.innerHTML += "</ul>"
 	}
-	//French
-	if (lan.getLang() == 2){
-
-	}
 	//PT
 	else {
+		a.innerHTML += "<p>Gestão</p>"
+		a.innerHTML += "<p> Calcular inflação num periodo </p>"
+		a.innerHTML += "<p>Quantidade Ano 1 <input type='Number'  id ='qOne' name='qOne'></p>"
+		a.innerHTML += "<p>Preço Ano 1 <input type='Number' id ='pOne' name='pOne'></p>"
+		a.innerHTML += "<p>Quantidade Ano 2<input type='Number'  id ='qTwo' name='qTwo'></p>"
+		a.innerHTML += "<p>Preço Ano 2 <input type='Number'  id ='pTwo' name='pTwo'> <input type='submit'value='Calcular'></p>"
+		a.innerHTML += "<p> Inflação no Ano 1 a 2 foi de " + console.log(doInflacao(parseInt(document.getElementById("subPOne").value),parseInt(document.getElementById("qOne").value),parseInt(document.getElementById("pTwo").value),parseInt(document.getElementById("qTwo").value))) + "</p>";
+		a.innerHTML += "<li></li>" 
+		a.innerHTML += "</ul>"
 
 	}
 }
