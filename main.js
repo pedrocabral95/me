@@ -92,13 +92,13 @@ function doHome(){
 	let a = document.getElementById("contents") ;
 	a.innerHTML = "<h2>" +  aInicio[lan.getLang()] + "</h2>";
 
-	let b = document.createElement("gestao");
-	b.innerHTML = "<div> Gestão</div>"
+	let b = document.createElement("In Progress");
+	/*b.innerHTML = "<div> Gestão</div>"
 	a.appendChild(b);
 	let c = document.createElement("inflacao")
 	c.innerHTML ="<div><button type='button' onclick=doInflacao()>Calcular inflação num periodo </>"
 	a.appendChild(c)
-
+*/
 	
 }
 function doAbout(){
@@ -636,6 +636,11 @@ function doSports(){
 		fazendo parte da minha rotina. Correr e Jogar futebol são, definitivamente, \
 		o que mais me motiva a fazer desporto, para alem de me ajudar fisica e psicologicamente.</p>";
 	}
+	a.innerHTML += "<p> My Favourite :</p>";
+	a.innerHTML += "<iframe height='405' width='590' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/activities/5225573203/embed/f9db0e399a77274cfc7e6aa1e2c9c560492a6e24'></iframe>"
+	a.innerHTML += "<p> Longest One: </p>";
+	a.innerHTML +="<iframe height='405' width='590' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/activities/5264295464/embed/72889de33b3fed96c67cce5fadfd380499406846'></iframe>"
+	a.innerHTML += "<p> Recently: </p>";
 	a.innerHTML += "<iframe height='405' width='590' frameborder='0' allowtransparency='true' scrolling='yes' src='https://www.strava.com/activities/6730387205/embed/4390ab49c3101752304047a4d93dc9c035c7043c'></iframe>"
 	a.innerHTML += "<iframe height='405' width='590' frameborder='0' allowtransparency='true' scrolling='yes' src='https://www.strava.com/activities/6707982869/embed/80cfaa2b5d5c46268893e6eed4a9995be9627948'></iframe>"
 	a.innerHTML += "<iframe height='405' width='590' frameborder='0' allowtransparency='true' scrolling='yes' src='https://www.strava.com/activities/6683317422/embed/57dd29b6ffb16b321f4a6231d74f440757b4c7d1'></iframe>"
