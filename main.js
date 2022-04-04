@@ -111,7 +111,7 @@ function doAbout(){
 		
 		a.innerHTML += "<p>I'm B.Sc. student in " + 
 					"<a href=https://fenix.tecnico.ulisboa.pt/cursos/leic-t/descricao>\
-					Computer Science and Engineering [EIC] </a></p>"
+					Computer Science and Engineering [CSE] </a></p>"
 		a.innerHTML += "<p> Now i'm finishing my bachelor degree at the "
 					+"<a href=http://tecnico.ulisboa.pt/pt >Instituto Superior Técnico</a>, on  "
 					+"<a href=http://tecnico.ulisboa.pt/pt/tag/campus-taguspark/>\
@@ -122,7 +122,7 @@ function doAbout(){
 		a.innerHTML += "<p>Salut! Je m'appele Pedro Cabral, je suis Portugais . Je née en <a href=https://www.visiteleiria.pt/fr/accueil> Leiria.</a> </p>"
 		a.innerHTML += "<p> Je suis un étudiant en " + 
 						"<a href=https://fenix.tecnico.ulisboa.pt/cursos/leic-t/descricao>\
-						 Ingénierie Informatice et de l'ordinateur [EIC]\
+						 Ingénierie Informatique et de l'ordinateur [CSE]\
 						</a>.</p>";
 		a.innerHTML += "<p>Je suis maintenant en dernière année de bachelier à l'" + 
 						"<a href=http://tecnico.ulisboa.pt/en >Instituto Superior Técnico</a> , sur le " +
